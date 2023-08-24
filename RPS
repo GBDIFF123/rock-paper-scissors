@@ -1,0 +1,81 @@
+using System;
+using System.ComponentModel.Design;
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        bool continueLoop = true;
+
+        while (continueLoop)
+        {
+            Console.WriteLine("Press any key to play RPS!");
+            Console.ReadKey();
+            Console.Clear();
+            int Uplay = 0;
+            Console.WriteLine("Rock paper Scissors SHOOT!");
+            string play = Console.ReadLine().ToLower();
+            if (play == "rock")
+            {
+                Uplay = 1;
+            }
+            else if (play == "paper")
+            {
+                Uplay = 2;
+            }
+            else if (play == "scissors")
+            {
+                Uplay = 3;
+            }
+            else
+            {
+                Console.WriteLine("You cant play that move! NO MORE RPS FOR YOU!");
+                return;
+            }
+            Random RNG = new Random();
+            int Cplay = RNG.Next(1, 4);
+
+            if (Cplay == 1 && Uplay == 2)
+            {
+                Console.WriteLine("Opponent played rock You WIN!");
+
+            }
+            else if (Cplay == 2 && Uplay == 3)
+            {
+                Console.WriteLine("Opponent played paper You WIN!");
+
+            }
+            else if (Cplay == 3 && Uplay == 1)
+            {
+                Console.WriteLine("Opponent played scissors You WIN!");
+
+            }
+            else if (Cplay == 1 && Uplay == 3)
+            {
+                Console.WriteLine("Opponent played rock You LOSE!");
+
+            }
+            else if (Cplay == 2 && Uplay == 1)
+            {
+                Console.WriteLine("Opponent played paper You LOSE!");
+
+            }
+            else if (Cplay == 3 && Uplay == 2)
+            {
+                Console.WriteLine("Opponent played scissors You LOSE!");
+
+            }
+            else
+            {
+                Console.WriteLine("Same move thats a draw :(");
+
+            }
+
+
+
+
+
+
+        }
+    }
+}
